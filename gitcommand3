@@ -1,0 +1,194 @@
+Alias: 
+2 git config --global alias.c checkout 
+3 
+ 
+4 Remove  Alias: 
+5 local 
+6 vi /home/labsuser/handson-basic/.git/config  [local repo path] 
+7 
+ 
+8 /home/labsuser/handson-basic 
+9 
+ 
+10 Global 
+11 ~/.gitconfig [User's home directory] 
+12 
+ 
+13 Amend last commit message: 
+14 git commit --amend -m "Modified msg 1" 
+15 
+ 
+16 Tag: 
+17 git tag v_0.0.1 
+18 
+ 
+19 Push Tag to remote repo 
+20 git push origin v_0.0.1 
+21 
+ 
+22 Unstage 
+23 modify <file> 
+24 git add <file>.  [it is staged] 
+25 git reset <file> 
+26 git checkout -- <file> 
+27 
+ 
+28 Remove file from repo 
+29 git rm <filename> 
+30 git commit -m "" 
+31 git push 
+32 
+ 
+33 Clean local workspace/repo/Untracked files 
+34 git add *.java 
+35 git add *.properties 
+36 git clean -n [List all untracked files] 
+37   output>>> Would remove 1.txt 
+38 git clean -f [MAKE sure your actual files are in stage area.] 
+39 
+ 
+40   output>> 
+41   Changes to be committed: 
+42   (use "git reset HEAD <file>..." to unstage) 
+43 
+ 
+44         new file:   F1.java 
+45 
+ 
+46   Untracked files: 
+47     (use "git add <file>..." to include in what will be committed) 
+48 
+ 
+49           1.txt  
+50   ==> git clean -f [It will only remove 1.txt]   
+51    
+52  git clean -d -f [it cleans untracked diretories] 
+53   
+54  Rename a file in remote repo: 
+55  git mv <src> <tar>  
+56  git commit -m "rename file" 
+57  git push 
+58   
+59  Restore a perticular file 
+60  git log  
+61  >>> Pick the respective commit Id which is gone be restore to current local repo 
+62   
+63  git checkout <commit Id> <filename> 
+64   
+65    out put>>> 
+66     
+67       Author: divang <divang.s@gmail.com> 
+68       labsuser@ubuntu1804:~/handson-basic$ git log -p 
+69       commit bd47d5f5305cd77ec9fee4fb855ae63d0c240819 (HEAD -> main, origin/main) 
+70       Author: divang <divang.s@gmail.com> 
+71       Date:   Sat Feb 13 15:59:39 2021 +0000 
+72 
+ 
+73           feature 1 
+74 
+ 
+75      diff --git a/F1.java b/F1.java 
+76      index e69de29..6a11bb3 100644 
+77     
+78     git checkout 5913331a3c5bf92f07d445cda60243a3d9a2c180 F1.java  
+79 
+ 
+80   
+81  Merge conflict manually: 
+82  Second user: 
+83   git pull 
+84   vi F1.java[ add F11.1 feature ] 
+85   git add F1.java 
+86   git commit -m "add F11.1 feature" 
+87   
+88  First user: 
+89  [After second user pushed the code, but first user has not pull the latest code] 
+90  vi F1.java [add F11.0 feature] 
+91  git add F1.java 
+92  git commit -m " added F11.0 feature" 
+93  git push 
+94   
+95      output>>>  
+96           To https://github.com/github06022021/handson-basic.git 
+97            ! [rejected]        main -> main (non-fast-forward) 
+98           error: failed to push some refs to 'https://github.com/github06022021/handson-basic.git' 
+99           hint: Updates were rejected because the tip of your current branch is behind 
+100           hint: its remote counterpart. Integrate the remote changes (e.g. 
+101           hint: 'git pull ...') before pushing again. 
+102           hint: See the 'Note about fast-forwards' in 'git push --help' for details. 
+103 
+ 
+104   git pull 
+105 
+ 
+106     outpull>>> 
+107       Auto-merging F1.java 
+108       CONFLICT (content): Merge conflict in F1.java 
+109       Automatic merge failed; fix conflicts and then commit the result. 
+110    
+111   git mergetool 
+112     output>>> 
+113       Merging: 
+114       F1.java 
+115 
+ 
+116       Normal merge conflict for 'F1.java': 
+117         {local}: modified file 
+118         {remote}: modified file 
+119       Hit return to start merge resolution tool (vimdiff):  
+120     
+121    [use your vi knowledge to manually clean the file] 
+122    Diff output: 
+123    <<<<<<<<<Head    
+124    <your local changes1> 
+125    <your local changes2> 
+126    <your local changes3> 
+127    "==========================" 
+128    <remote changes2> 
+129    <remote changes2> 
+130    <<<<<<<<<<< <Remote commit Id> 
+131     
+132    [After manual changes are done, make sure to save that file.] 
+133    
+134   git commit 
+135   git push 
+136     
+137   [If your last merge has failed and getting the below error ===>]  
+138     output >>>  
+139         error: You have not concluded your merge (MERGE_HEAD exists). 
+140           hint: Please, commit your changes before merging. 
+141           fatal: Exiting because of unfinished merge. 
+142 
+ 
+143   $git reset --merge [it will revert back the last merge] 
+144     
+145     
+146   Multi repo push 
+147   Create a empty repo in more than one git web service. 
+148   - github 
+149       git url:  https://github.com/github06022021/handson-basic.git 
+150   - gitlab 
+151       git url: https://gitlab.com/divang/git-hands-on.git  
+152    
+153   - $git config --global credential.helper store [make sure, user name and password store configuraion is set] 
+154 
+ 
+155   Indivisaul push to repo 
+156     - git remote add <remote repo name> <git url> 
+157     Eg 
+158       - git remote add originGitLab https://gitlab.com/divang/git-hands-on.git [make sure remote name should be unique.] 
+159       - git remote add origin https://gitlab.com/divang/git-hands-on.git [existing one] 
+160     - git add <filename> 
+161     - git commit -m "" 
+162     - git push originGitLab main [it will push to gitlab] 
+163     - git push origin main [it will push to github] 
+164    
+165   Single push to both repo 
+166     git remote set-url --add --push <remote name> <Git url> 
+167     Eg 
+168       - git remote set-url --add --push origin https://gitlab.com/divang/git-hands-on.git  
+169       - git remote set-url --add --push origin https://github.com/github06022021/handson-basic.git 
+170      
+171     - git add <filename> 
+172     - git commit -m "" 
+173     - git push origin main [it will push to github and gitlab] 
