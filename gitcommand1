@@ -1,0 +1,78 @@
+# gitcode
+
+ Github Remote repository creation	 
+2 - Git configuration 
+3 	- local [.git/config] 
+4 		$git config --local user.name 'yugandhar'  
+
+5 	- global [~/.gitconfig ] 
+6 		$git config --global core.excludesfile ~/.gitignore_all_repo  
+7 		$git config --global user.name 'abc' 
+8 		$git config --global user.email 'abc@xyz.com' 
+
+9 	- system [/etc/gitconfig] 
+10 		$sudo git config --system commit.template /home/labsuser/commit-template.txt
+
+11 - Repo initialization  
+12 	$git init 
+
+13 - Branch creation 
+14 	$git branch master 
+
+15 - Add file/Staging 
+16 	$git add README.md 
+
+17 - Commit changes 
+18 	$git commit -m "Initial Commit" 
+
+19 - Create a branch  
+20 	$git branch -M master  
+21 	or 
+22 	$git checkout -b master 
+
+23 - Track remote repo / Add  
+24 	$git remote add developer https://github.com/github06022021/handson-basic.git 	
+
+25 - Setup upstream 	
+26 	$git push -u developer master 
+
+27 - Delete brach 
+28 	$git push origin :<branchname> [remote] 
+29 	$git branch -D <branchname> [local] 
+  
+30 - Store password 
+31 	$git config --global credential.helper store 
+
+32 - Ignore files to commit:  
+33 	.gitignore file 
+  
+34 - Commit template 
+35 	sudo git config --system commit.template /home/labsuser/commit-template.txt 
+  
+36 - Clone repo 
+37 	$git clone <git repo> 
+  
+38 - Pull repo 
+39 	$git pull 
+  
+40 - Merge branch 
+41 	$git merge <branch> 
+  
+  
+42 - Log 
+43 	$git log --oneline 
+44 	$git log -q 
+45 	$git log -p 
+46 	$git log --stat --summary 
+47 
+ 
+- Diff [Tracking is the ability to identify changes between the different versions of the same file, spread across various repositories.] 
+49 	$git diff --staged / $git diff HEAD 
+50 	$git diff <commit hashcode> 
+51 	$git diff --cached 
+  
+- Stash 
+53 	$git stash 
+54 	$git stash list 
+55 	$git stash apply 
+56 	$git stash apply <id> 
