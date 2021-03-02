@@ -54,3 +54,32 @@ git checkout -b master
 45 	git checkout develop 
 46 	git merge --no-ff hotfix-1.2.1 
 47 	git branch -d hotfix-1.2.1 
+
+
+
+ Open this file in GitHub Desktop  You must be signed in to make or propose changes  You must be signed in to make or propose changes 
+
+
+1 BitBucket Gui  [https://bitbucket.org/] 
+2   - repo creation 
+3   - add file 
+4   - pull 
+5   - branching 
+6   - create Pull request 
+7   - Branch model 
+8   - CI/CD Pipeline 
+9   - Development 
+10   - Create User 
+11   - Create Group 
+12   - Permission 
+13   - Web hock 
+14 
+ 
+15 Gitlab [gitlab.com] 
+16 
+ 
+17 SVN migration: 
+18  https://git-scm.com/book/en/v2/Git-and-Other-Systems-Migrating-to-Git 
+19   
+20 Intellij Download 
+21   https://www.jetbrains.com/idea/download/#section=mac 
