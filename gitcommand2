@@ -12,7 +12,7 @@ First User activities:
 12    git branch -M main 
 13    git remote add origin https://github.com/github06022021/handson-basic.git 
 14    git push -u origin main 
-15    
+
 16 Use case: 2   
 17    ============================ 
 18    Second user activities 
@@ -30,7 +30,7 @@ First User activities:
 30        git add . [for all files]  
 31    95  git commit  -m "Feature 2 impl" 
 32    96  git push -u origin main 
-33     
+     
 34 Use case: 3    
 35    ============================   ============================   ============================ 
 36    First User activities after second user pushed the changes 
@@ -40,7 +40,7 @@ First User activities:
 40    $ cat README.md 
 41       First configuration 
 42       Second 
-43     
+
 44    $ git pull  [it downloads all the remote changes to the local system.] 
 45     
 46    Output>> 
@@ -62,8 +62,7 @@ First User activities:
 62           
 63 Use case: 4 
 64 =============================== 
-65 Create a feature branch via Github.com [Switch branch/Tags] 
-66 
+65 Create a feature branch via Github.com [Switch branch/Tags]  
  
 67 Second User wants to start work on some feature. 
 68 $ git branch -r [lsit down all remote branches] 
@@ -121,11 +120,9 @@ First User activities:
 113 
  
 114 $cat commit-template.txt  
-115 Comments: 
-116 
+115 Comments: z
  
 117 Jira: 
-118 
  
 119 Bug: 
 120 
