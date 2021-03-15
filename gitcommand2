@@ -4,8 +4,8 @@ First User activities:
 4     
 5    [local machine] Init local repo 
 6    [local machine] Link local repo with remote repository 
-          $git config --global user.name 'abc' 
-		$git config --global user.email 'abc@xyz.com' 
+      $git config --global user.name 'abc' 
+      $git config --global user.email 'abc@xyz.com' 
 
 7     
 8    echo "# second-repo" >> README.md 
