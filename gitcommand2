@@ -4,6 +4,9 @@ First User activities:
 4     
 5    [local machine] Init local repo 
 6    [local machine] Link local repo with remote repository 
+          $git config --global user.name 'abc' 
+		$git config --global user.email 'abc@xyz.com' 
+
 7     
 8    echo "# second-repo" >> README.md 
 9    git init 
@@ -11,6 +14,7 @@ First User activities:
 11    git commit -m "first commit" 
 12    git branch -M main 
 13    git remote add origin https://github.com/github06022021/handson-basic.git 
+      $git config --global credential.helper store [Store password]
 14    git push -u origin main 
 
 16 Use case: 2   
