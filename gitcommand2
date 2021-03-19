@@ -69,6 +69,8 @@ First User activities:
 65 Create a feature branch via Github.com [Switch branch/Tags]  
  
 67 Second User wants to start work on some feature. 
+   $ git barnch [to check the current branch]
+   $ git barnch -a [to check the all branch]
 68 $ git branch -r [lsit down all remote branches] 
 69   output>>>  
 70     Feature-1 
@@ -84,8 +86,9 @@ First User activities:
 79 $ vi README.md 
 80 $ git add README.md  
 81 $ git commit  -m "Feature 1 impl " 
-82 $ git push -u origin Feature-1      
-83 
+82 $ git push -u origin <branch name>   
+
+
  
 84 Branch "Feature-1" is ahead of "main" branch. So we need to merge into "main" branch 
 85 
